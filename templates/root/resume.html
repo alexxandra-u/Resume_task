@@ -1,0 +1,11 @@
+{% extends 'root/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Резюме{% endblock %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button name="save_data" type="submit" class="btn btn-primary">Сохранить</button>
+        <button name="export_data" type="submit" class="btn btn-primary">Сохранить в формате PDF</button>
+    </form>
+{% endblock %}
